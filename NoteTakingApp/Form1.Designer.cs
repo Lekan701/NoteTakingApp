@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.titleBox = new System.Windows.Forms.TextBox();
+            this.noteBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.previousNotes = new System.Windows.Forms.DataGridView();
@@ -40,20 +40,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.previousNotes)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // titleBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(444, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(430, 23);
-            this.textBox1.TabIndex = 0;
+            this.titleBox.Location = new System.Drawing.Point(444, 45);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.Size = new System.Drawing.Size(430, 23);
+            this.titleBox.TabIndex = 0;
             // 
-            // textBox2
+            // noteBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(444, 100);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(430, 424);
-            this.textBox2.TabIndex = 1;
+            this.noteBox.Location = new System.Drawing.Point(444, 100);
+            this.noteBox.Multiline = true;
+            this.noteBox.Name = "noteBox";
+            this.noteBox.Size = new System.Drawing.Size(430, 424);
+            this.noteBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -85,6 +85,7 @@
             this.previousNotes.RowTemplate.Height = 25;
             this.previousNotes.Size = new System.Drawing.Size(426, 429);
             this.previousNotes.TabIndex = 4;
+            this.previousNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.previousNotes_CellDoubleClick);
             // 
             // loadButton
             // 
@@ -147,8 +148,8 @@
             this.Controls.Add(this.previousNotes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.noteBox);
+            this.Controls.Add(this.titleBox);
             this.Name = "NoteTaker";
             this.Text = "Note Taker";
             this.Load += new System.EventHandler(this.NoteTaker_Load);
@@ -160,8 +161,8 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox titleBox;
+        private TextBox noteBox;
         private Label label1;
         private Label label2;
         private DataGridView previousNotes;
